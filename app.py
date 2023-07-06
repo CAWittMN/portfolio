@@ -7,7 +7,7 @@ from forms import ContactForm
 
 app = Flask(__name__)
 
-app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", 'tempkey')
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 @app.route("/")
